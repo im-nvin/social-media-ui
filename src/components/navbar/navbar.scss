@@ -1,0 +1,157 @@
+@import '../../style.scss';
+
+.navbar {
+    @include themify($themes) {
+
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        border-bottom: 1px solid themed("border");
+        padding: 10px 10px;
+        background-color: themed("bg");
+        position: sticky;
+        top: 0;
+        margin: 0;
+        color: themed("textColor");
+        z-index: 999;
+
+        .icon {
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            ;
+
+            .logo {
+                font-size: 25px;
+                color: themed("logo");
+                font-weight: bold;
+                padding: 20px;
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                border: 1px solid themed("border");
+                padding: 5px;
+                border-radius: 25px;
+                cursor: pointer;
+
+                input {
+                    border: none;
+                    width: 400px;
+                    cursor: pointer;
+                    padding: 8px 0;
+                    background-color: transparent;
+                    color: themed("textColor");
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+
+            .notival {
+                background-color: red;
+                color: white;
+                border-radius: 20%;
+                font-size: 11px;
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                padding: 2px;
+                cursor: pointer;
+            }
+
+            .notification {
+                position: relative;
+            }
+
+            .msg {
+                position: relative;
+
+
+            }
+
+            .friendReq {
+                position: relative;
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+
+                span {
+                    font-size: 25px;
+                    font-family: 500;
+                }
+
+                img {
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+
+            .menu {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                padding-bottom: 5px;
+
+                .menulist {
+                    display: none;
+                    margin-bottom: 2px;
+                    position: absolute;
+                    top: 30px;
+                   
+
+
+                    .listitem {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 10px;
+                        border-radius: 1px;
+                        cursor: pointer;
+                        border-bottom: 1px solid themed("border");
+                        font-size: 22px;
+                        color: themed("textColor");
+                        font-weight: 500;
+
+                        background-color: themed("bg");
+                        &:hover {
+                            background-color: rgb(127, 125, 125);
+                        }
+                    }
+                }
+
+                &:hover {
+                    .menulist {
+                        display: flex;
+                        flex-direction: column;
+                        right: 5px;
+                    }
+                }
+            }
+
+        }
+
+    }
+}

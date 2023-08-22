@@ -1,0 +1,73 @@
+@import "../../style.scss";
+
+.leftbar {
+    @include themify($themes) {
+    flex: 2;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 71px);
+    overflow: scroll;
+    // for firefox
+    scrollbar-width: none;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    //for chrome
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu {
+        gap: 20px;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+
+
+            .title {
+                font-size: 14px;
+                font-weight: 200;
+                color: rgb(198, 197, 197);
+                text-transform: uppercase;
+
+
+            }
+
+            .listItem {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 10px;
+                border-radius: 5px;
+                text-decoration: none;
+                color: themed("textColor");
+                cursor: pointer;
+
+                .listItemTitle {
+                    font-size: 22px;
+                    font-weight: 500;
+                }
+
+                ::first-letter {
+                    text-transform: capitalize;
+                }
+
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                }
+
+                &:hover {
+                    background-color: rgb(188, 187, 187);
+                }
+
+
+            }
+        }
+    }
+}}
